@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: black;
+        }
+
+        h2 {
+            color: green;
+        }
+
+        .container {
+            border: 2px solid green;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: lawngreen;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>JavaScript Error Handling</h2>
+    <div class="container">
+        <p>Click the buttons below to simulate and handle errors.</p>
+        <button onclick="performAddition()">Test Addition</button>
+        <button onclick="triggerUndefinedFunction()">Trigger Error</button>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+    </div>
+
+    <script>
+        function add(a, b) {
+            return a + b;
+        }
+        function performAddition() {
+            try {
+                let result = add(10, 20);
+                document.getElementById("p1").innerHTML = "The sum is: " + result, "success";
+            } catch (error) {
+                document.getElementById("p2").innerHTML = "Error: " + error.message, "error";
+            }
+        }
+
+        function triggerUndefinedFunction() {
+            try {
+                randomFunction();
+            } catch (error) {
+                document.getElementById("p3").innerHTML = "An error occurred: " + error.message, "error";
+            }
+        }
+    </script>
+</body>
+
+</html>
